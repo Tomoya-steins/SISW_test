@@ -1,0 +1,14 @@
+<ul>
+    <% @users_info.each do |info| %>
+    <li>
+        <%= info.name %>
+        <%= info.account_id %>
+        <%= link_to '編集', "account/#{info.id}/edit" %> <%#名前付きルートを断念　今後改善%>
+        <% if current_user.id != info.id %>
+        <%= link_to '削除', "account/#{info.id}/destroy", method: :delete %>
+        <% end %>
+    </li>
+    <% end %>
+</ul>
+
+<%= link_to  "投稿一覧", root_path %>

@@ -1,0 +1,6 @@
+<p>Welcome <%= current_user.name %>!</p>
+
+<%= link_to 'ユーザ一覧', accounts_path %>
+<%= link_to 'ログアウト', logout_path, method: :delete %>
+
+<%= link_to '新規投稿', tasks_new_path %>

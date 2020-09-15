@@ -1,0 +1,12 @@
+<%# form_withを使用したかったが、謎のエラーにより断念%>
+
+<% @info.errors.full_messages.each do |message| %>
+<%= message %>
+<% end %>
+
+<%= form_tag("/account/#{@info.id}/edit") %>
+<p>ユーザー名</p>
+<input name="name" value="<%= @info.name %>">
+<p>アカウントID</p>
+<input name="account_id" value="<%= @info.account_id %>">
+<input type="submit" value="変更">

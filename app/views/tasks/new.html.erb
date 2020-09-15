@@ -1,0 +1,14 @@
+<%= form_with url: "/tasks/new", local: true do |f| %>
+<%= flash[:alert] %>
+<p>
+    <%= f.label :name, 'タイトル' %>
+    <%= f.text_field :name %>
+</p>
+
+<p>
+    <%= f.label :image, '投稿画像' %>
+    <%= f.attachment_field :image %>
+</p>
+
+<p><%= f.submit '投稿' %></p>
+<% end %>
